@@ -1,4 +1,4 @@
-package two_sum
+package leet1
 
 import (
 	"testing"

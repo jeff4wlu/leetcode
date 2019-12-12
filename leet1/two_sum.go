@@ -1,4 +1,4 @@
-package two_sum
+package leet1
 
 func TwoSum(arr []int, target int) (re [2]int) {
 	hm := make(map[int]int, 20)

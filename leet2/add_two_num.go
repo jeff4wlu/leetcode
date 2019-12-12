@@ -1,4 +1,4 @@
-package add_two_num
+package leet2
 
 import "leetcode/base"
 
