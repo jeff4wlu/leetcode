@@ -72,9 +72,9 @@ func TestLongestPalimdromicSubstr1(t *testing.T) {
 		})
 
 		Convey("重复多位", func() {
-			in := "bsceooooooocee"
+			in := "bscenooooooncee"
 			got := LongestPalimdromicSubstr1(in)
-			want := "ooooooo"
+			want := "noooooon"
 
 			if got != want {
 				t.Errorf("got %s, want %s", got, want)

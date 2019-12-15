@@ -55,13 +55,14 @@ func LongestPalimdromicSubstr1(in string) string {
 
 	var start, len int
 
-	//[i,j]代表回文字符串，在二维数组中就是下半三角区
+	//[i,j]代表回文字符串，在二维数组中就是上半三角区（j横向x，i竖向y）
 	for i := 0; i < n; i++ {
 
 		dp[i][i] = 1
 
 		for j := 0; j < n; j++ {
 
+			//i与j隔开一个或隔开两个的情况下
 			if data[i] == data[j] && (i-j < 2 || dp[j+1][i-1] == 1) {
 				dp[j][i] = 1
 				if len < i-j+1 {
