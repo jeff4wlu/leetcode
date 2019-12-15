@@ -17,7 +17,7 @@ func TestLongestPalimdromicSubstr(t *testing.T) {
 			if got != want {
 				t.Errorf("got %s, want %s", got, want)
 			}
-			//ShouldNotBeNil(err)
+
 		})
 
 		Convey("总元素为偶数情况", func() {
@@ -28,18 +28,58 @@ func TestLongestPalimdromicSubstr(t *testing.T) {
 			if got != want {
 				t.Errorf("got %s, want %s", got, want)
 			}
-			//ShouldNotBeNil(err)
+
 		})
 
 		Convey("重复多位", func() {
-			in := "bscenoooooooncee"
+			in := "bsceooooooonee"
 			got := LongestPalimdromicSubstr(in)
-			want := "nooooooon"
+			want := "ooooooo"
 
 			if got != want {
 				t.Errorf("got %s, want %s", got, want)
 			}
-			//ShouldNotBeNil(err)
+
+		})
+
+	})
+
+}
+
+func TestLongestPalimdromicSubstr1(t *testing.T) {
+
+	Convey("TestLongestPalimdromicSubstr1", t, func() {
+		Convey("总元素为基数情况", func() {
+			in := "aabcbd"
+			got := LongestPalimdromicSubstr1(in)
+			want := "bcb"
+
+			if got != want {
+				t.Errorf("got %s, want %s", got, want)
+			}
+
+		})
+
+		Convey("总元素为偶数情况", func() {
+			in := "bscenooncee"
+			got := LongestPalimdromicSubstr1(in)
+			want := "noon"
+
+			if got != want {
+				t.Errorf("got %s, want %s", got, want)
+			}
+
+		})
+
+		Convey("重复多位", func() {
+			in := "bsceooooooocee"
+			got := LongestPalimdromicSubstr1(in)
+			want := "ooooooo"
+
+			if got != want {
+				t.Errorf("got %s, want %s", got, want)
+			}
+
 		})
 
 	})
