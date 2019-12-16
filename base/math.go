@@ -1,5 +1,7 @@
 package base
 
+const INT32_MAX = 2147483647
+
 func IntMax(a, b int) int {
 	if a >= b {
 		return a
