@@ -1,6 +1,9 @@
-package base
+package infra
 
-const INT32_MAX = 2147483647
+const (
+	INT32_MAX = 2147483647
+	INT32_MIN = -2147483648
+)
 
 func IntMax(a, b int) int {
 	if a >= b {

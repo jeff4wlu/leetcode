@@ -1,6 +1,6 @@
 package leet4
 
-import "leetcode/base"
+import "leetcode/infra"
 
 //0、保证arr1比arr2短
 //1、i是短数组的Index，j是长数组的index。
@@ -40,7 +40,7 @@ func MedianTwoSortedArr(arr1, arr2 []int) float64 {
 			} else if j == 0 {
 				median = arr2[i-1]
 			} else {
-				median = base.IntMax(arr1[i-1], arr2[j-1])
+				median = infra.IntMax(arr1[i-1], arr2[j-1])
 			}
 
 			break
@@ -68,6 +68,6 @@ func MedianTwoSortedArr(arr1, arr2 []int) float64 {
 		return float64(median+arr1[i]) / 2
 	}
 
-	return float64(median + base.IntMin(arr1[i], arr2[j])/2)
+	return float64(median + infra.IntMin(arr1[i], arr2[j])/2)
 
 }

@@ -1,10 +1,10 @@
 package leet2
 
-import "leetcode/base"
+import "leetcode/infra"
 
-func AddTwoNum(l1, l2 *base.ListNode) (re *base.ListNode) {
+func AddTwoNum(l1, l2 *infra.ListNode) (re *infra.ListNode) {
 
-	dummy := base.ListNode{-1, nil}
+	dummy := infra.ListNode{-1, nil}
 	cur := &dummy
 	var carry int
 
@@ -24,13 +24,13 @@ func AddTwoNum(l1, l2 *base.ListNode) (re *base.ListNode) {
 		if sum >= 10 {
 			carry = 1
 		}
-		cur.Next = &base.ListNode{sum % 10, nil}
+		cur.Next = &infra.ListNode{sum % 10, nil}
 		cur = cur.Next
 
 	}
 
 	if carry == 1 {
-		cur.Next = &base.ListNode{1, nil}
+		cur.Next = &infra.ListNode{1, nil}
 	}
 
 	return dummy.Next

@@ -1,7 +1,7 @@
 package leet7
 
 import (
-	"leetcode/base"
+	"leetcode/infra"
 	"math"
 )
 
@@ -19,7 +19,7 @@ func ReverseInt(x int) int {
 	}
 
 	//int32溢出检查
-	if int(math.Abs(float64(res))) > base.INT32_MAX {
+	if int(math.Abs(float64(res))) > infra.INT32_MAX {
 		return 0
 	}
 

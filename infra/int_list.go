@@ -1,4 +1,4 @@
-package base
+package infra
 
 type ListNode struct {
 	Value int
