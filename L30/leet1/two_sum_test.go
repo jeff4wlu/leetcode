@@ -17,7 +17,7 @@ func TestTwoSum(t *testing.T) {
 			if got[0] != want[0] && got[1] != want[1] {
 				t.Errorf("got []int{%d, %d}, want []int{%d, %d}", got[0], got[1], want[0], want[1])
 			}
-			//ShouldNotBeNil(err)
+
 		})
 
 		Convey("数组中有两个相同值的情况", func() {
