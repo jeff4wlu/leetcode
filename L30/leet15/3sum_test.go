@@ -9,7 +9,7 @@ import (
 func TestThreeSum(t *testing.T) {
 
 	Convey("TestThreeSum", t, func() {
-		Convey("数组中相加等于目标值的两个索引", func() {
+		Convey("求三和等于0的solution", func() {
 			in := []int{-1, 0, 1, 2, -1, -4}
 			got := ThreeSum(in)
 			/*
