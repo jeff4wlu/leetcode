@@ -11,6 +11,7 @@ func minString(ss []string) int {
 
 }
 
+// 字符串切片，a[0:]即使是空串也不会出错，但a[0:1]的空串就会出错
 func LongestComPrefix(ss []string) string {
 
 	if len(ss) < 2 {
