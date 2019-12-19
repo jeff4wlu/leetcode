@@ -4,16 +4,16 @@ import "leetcode/infra"
 
 var stack infra.Stack = infra.CreateStack()
 
+var dict = map[string]string{
+	")": "(",
+	"]": "[",
+	"}": "{",
+}
+
 func ValidParentheses(s string) bool {
 	size := len(s)
 	if size < 2 || size > 2 && size%2 != 0 {
 		return false
-	}
-
-	dict := map[string]string{
-		")": "(",
-		"]": "[",
-		"}": "{",
 	}
 
 	for i := 0; i < size; i++ {
