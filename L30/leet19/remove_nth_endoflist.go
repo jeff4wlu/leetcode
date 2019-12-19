@@ -4,6 +4,7 @@ import "leetcode/infra"
 
 //注意这个链表的头个node是有效数据，而不是head
 //nth假设永远有效
+//要求只能遍历一次
 func RemoveNthEndofList(lst *infra.ListNode, nth int) *infra.ListNode {
 
 	if lst == nil {
