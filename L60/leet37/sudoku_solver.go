@@ -2,6 +2,7 @@ package leet37
 
 import "leetcode/L60/leet36"
 
+//使用递归和backtracking回溯
 func SudokuSolver(sudoku [][]int, i, j int) bool {
 
 	//i是列，i等于9即是整个框走完
