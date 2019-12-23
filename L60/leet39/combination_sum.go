@@ -7,7 +7,7 @@ func CombinationSum(nums []int, target int) [][]int {
 
 	res := [][]int{}
 	path := []int{} //这里分配了内存，所以不会有nil的情况出现
-	CombinationSumDSF(nums, path, target, &res)
+	combinationSumDSF(nums, path, target, &res)
 	return res
 }
 
@@ -15,7 +15,7 @@ func CombinationSum(nums []int, target int) [][]int {
 //target,当前的和
 //path,当前的各个加数
 //res,结果集
-func CombinationSumDSF(nums, path []int, target int, res *[][]int) {
+func combinationSumDSF(nums, path []int, target int, res *[][]int) {
 
 	if target == 0 {
 		*res = append(*res, path)
@@ -26,12 +26,13 @@ func CombinationSumDSF(nums, path []int, target int, res *[][]int) {
 		return
 	}
 
+	//重新分配底层数组，避免被其他修改了
 	path = path[:len(path):len(path)]
 
 	//相同元素相加
-	CombinationSumDSF(nums, append(path, nums[0]), target-nums[0], res)
+	combinationSumDSF(nums, append(path, nums[0]), target-nums[0], res)
 
 	//步进
-	CombinationSumDSF(nums[1:], path, target, res)
+	combinationSumDSF(nums[1:], path, target, res)
 
 }
