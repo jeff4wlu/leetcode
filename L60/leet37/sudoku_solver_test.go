@@ -45,8 +45,8 @@ func TestSudokuSolver(t *testing.T) {
 
 func comp(got, want [][]int) bool {
 
-	for i := 0; i < 9; i++ {
-		for j := 0; j < 9; j++ {
+	for i := 0; i < len(got); i++ {
+		for j := 0; j < len(got[0]); j++ {
 			if got[i][j] != want[i][j] {
 				return false
 			}
