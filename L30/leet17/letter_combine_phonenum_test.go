@@ -1,6 +1,7 @@
 package leet17
 
 import (
+	"leetcode/infra"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -14,7 +15,7 @@ func TestLetterComPhonenum(t *testing.T) {
 			got := LetterComPhonenum(num)
 			want := []string{"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"}
 
-			if got == nil || !comp(got, want) {
+			if got == nil || !infra.StringArrComp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -22,21 +23,4 @@ func TestLetterComPhonenum(t *testing.T) {
 
 	})
 
-}
-
-func comp(a, b []string) bool {
-	for _, av := range a {
-		found := false
-		for _, bv := range b {
-			if av == bv {
-				found = true
-				break
-			}
-		}
-		if !found {
-			return false
-		}
-
-	}
-	return true
 }

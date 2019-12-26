@@ -1,6 +1,7 @@
 package leet22
 
 import (
+	"leetcode/infra"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -19,7 +20,7 @@ func TestGenParentheses(t *testing.T) {
 				"()()()",
 			}
 
-			if got == nil || !comp(got, want) {
+			if got == nil || !infra.StringArrComp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -27,21 +28,4 @@ func TestGenParentheses(t *testing.T) {
 
 	})
 
-}
-
-func comp(a, b []string) bool {
-	for _, av := range a {
-		found := false
-		for _, bv := range b {
-			if av == bv {
-				found = true
-				break
-			}
-		}
-		if !found {
-			return false
-		}
-
-	}
-	return true
 }
