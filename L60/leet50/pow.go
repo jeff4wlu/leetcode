@@ -24,6 +24,7 @@ func Pow(x float64, n int) float64 {
 func Pow2(x float64, n int) float64 {
 
 	var m int
+	//如果 n = Intege.MIN_VALUE，n = -n 会出现溢出
 	if n < 0 {
 		//如果是n负数，要避免n=-2147483648溢出
 		m = -n - 1
