@@ -52,6 +52,16 @@ func TestPow(t *testing.T) {
 
 		})
 
+		Convey("3", func() {
+			got := Pow2(2.0, 4)
+			want := 9.26100000000000101
+
+			if got != want {
+				t.Errorf("got %27.17f, want  %27.17f", got, want)
+			}
+
+		})
+
 	})
 
 }
