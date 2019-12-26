@@ -1,6 +1,7 @@
 package leet37
 
 import (
+	"leetcode/infra"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -33,7 +34,7 @@ func TestSudokuSolver(t *testing.T) {
 			arr8 = []int{2, 8, 7, 3, 1, 6, 4, 5, 9}
 			want := [][]int{arr0, arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8}
 
-			if !comp(sudu, want) {
+			if !infra.IntArr2DComp(sudu, want) {
 				t.Errorf("failed")
 			}
 
@@ -41,16 +42,4 @@ func TestSudokuSolver(t *testing.T) {
 
 	})
 
-}
-
-func comp(got, want [][]int) bool {
-
-	for i := 0; i < len(got); i++ {
-		for j := 0; j < len(got[0]); j++ {
-			if got[i][j] != want[i][j] {
-				return false
-			}
-		}
-	}
-	return true
 }

@@ -1,5 +1,6 @@
 package infra
 
+//比较两个[][]int集合内元素是否一样，而不是二维阵列
 func IntarrCollectionComp(a, b [][]int) bool {
 
 	if len(a) != len(b) {
