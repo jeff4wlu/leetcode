@@ -2,6 +2,7 @@ package leet53
 
 import "leetcode/infra"
 
+//DP
 func MaxSubarr(nums []int) int {
 
 	n := len(nums)
@@ -21,6 +22,7 @@ func MaxSubarr(nums []int) int {
 	return ans
 }
 
+//分治
 func MaxSubarr2(nums []int) int {
 
 	return findMaxSub(nums, 0, len(nums)-1)
