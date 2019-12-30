@@ -2,6 +2,7 @@ package leet61
 
 import "leetcode/infra"
 
+//把链表接起来成为圆形，向左走n步相当于向右走size-n步，当然要注意步数比size大的情况，求模
 func RotateList(lst *infra.ListNode, k int) *infra.ListNode {
 
 	var idx, end, res *infra.ListNode
