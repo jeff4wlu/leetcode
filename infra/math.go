@@ -18,3 +18,12 @@ func IntMin(a, b int) int {
 	}
 	return b
 }
+
+//阶乘
+func Fatorial(n int) int {
+	factorial := 1
+	for i := 1; i <= n; i++ {
+		factorial *= i
+	}
+	return factorial
+}
