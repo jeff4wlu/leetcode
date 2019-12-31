@@ -1,5 +1,6 @@
 package leet62
 
+//使用递归
 func UniquePaths(rows, cols int) (int, [][]string) {
 
 	res := [][]string{}
@@ -31,3 +32,5 @@ func solve(rows, cols, i, j int, direction string, path []string, res *[][]strin
 	solve(rows, cols, i, j+1, "right", path, res)
 	solve(rows, cols, i+1, j, "down", path, res)
 }
+
+//TODO:使用DP
