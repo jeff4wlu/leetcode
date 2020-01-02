@@ -2,18 +2,25 @@ package leet69
 
 func Sqrt(num int) int {
 
-	var mid int
-	end := num + 1
-	start := 1
-	for end > start {
+	start := 0
+	end := num
 
-		mid = start + (end-1)/2
-		if mid*mid > num {
-			end = mid
+	for start+1 < end {
+
+		mid := start + (end-start)/2
+
+		if mid*mid == num {
+			return mid
+		} else if mid*mid < num {
+			start = mid
 		} else {
-			start = mid + 1
+			end = mid
 		}
-
 	}
-	return start - 1
+
+	if end*end == num {
+		return end
+	}
+
+	return start
 }
