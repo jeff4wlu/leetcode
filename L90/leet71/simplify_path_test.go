@@ -1,4 +1,4 @@
-package leet70
+package leet71
 
 import (
 	"testing"
