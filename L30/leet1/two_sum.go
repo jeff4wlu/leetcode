@@ -17,6 +17,7 @@ func TwoSum(arr []int, target int) (re []int) {
 	return
 }
 
+//指针碰撞算法
 func TwoSum1(arr []int, target int) (re []int) {
 
 	n := len(arr)
