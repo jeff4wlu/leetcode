@@ -20,6 +20,17 @@ func TestMinWinSubstr(t *testing.T) {
 
 		})
 
+		Convey("用例2", func() {
+
+			got := MinWinSubstr("ADBOBECODEBANC", "ABBC")
+			want := "ADBOBEC"
+
+			if got != want {
+				t.Errorf("got %s, want %s", got, want)
+			}
+
+		})
+
 	})
 
 }

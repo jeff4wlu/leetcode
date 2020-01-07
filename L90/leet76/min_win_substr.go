@@ -1,6 +1,7 @@
 package leet76
 
 //指针对碰，滑动窗口
+//关键是怎样表达包含t的最小字符串
 func MinWinSubstr(s, t string) string {
 
 	sLen := len(s)
