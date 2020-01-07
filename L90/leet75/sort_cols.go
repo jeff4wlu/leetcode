@@ -1,6 +1,7 @@
 package leet75
 
 // 借鉴三路快排中的划分思路
+// 本算法根据只有三个颜色的特性，否则做不到
 func SortCols(in *[]int) {
 
 	i, j, k := 0, 0, len(*in)-1
