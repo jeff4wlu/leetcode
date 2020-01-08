@@ -11,9 +11,9 @@ func TestRotateList(t *testing.T) {
 
 	Convey("TestRotateList", t, func() {
 		Convey("1", func() {
-			one := infra.MakeListNilEnd([]int{1, 2, 3, 4, 5})
+			one := infra.MakeListNode([]int{1, 2, 3, 4, 5})
 			got := RotateList(one, 2)
-			want := infra.MakeListNilEnd([]int{4, 5, 1, 2, 3})
+			want := infra.MakeListNode([]int{4, 5, 1, 2, 3})
 
 			if !infra.CompareTwoIntList(got, want) {
 				t.Errorf("got is not equal with want")
@@ -22,9 +22,9 @@ func TestRotateList(t *testing.T) {
 		})
 
 		Convey("超过一个周期", func() {
-			one := infra.MakeListNilEnd([]int{1, 2, 3, 4, 5})
+			one := infra.MakeListNode([]int{1, 2, 3, 4, 5})
 			got := RotateList(one, 7)
-			want := infra.MakeListNilEnd([]int{4, 5, 1, 2, 3})
+			want := infra.MakeListNode([]int{4, 5, 1, 2, 3})
 
 			if !infra.CompareTwoIntList(got, want) {
 				t.Errorf("got is not equal with want")
@@ -33,9 +33,9 @@ func TestRotateList(t *testing.T) {
 		})
 
 		Convey("边界1", func() {
-			one := infra.MakeListNilEnd([]int{1, 2, 3, 4, 5})
+			one := infra.MakeListNode([]int{1, 2, 3, 4, 5})
 			got := RotateList(one, 4)
-			want := infra.MakeListNilEnd([]int{2, 3, 4, 5, 1})
+			want := infra.MakeListNode([]int{2, 3, 4, 5, 1})
 
 			if !infra.CompareTwoIntList(got, want) {
 				t.Errorf("got is not equal with want")
@@ -43,9 +43,9 @@ func TestRotateList(t *testing.T) {
 
 		})
 		Convey("边界2", func() {
-			one := infra.MakeListNilEnd([]int{1, 2, 3, 4, 5})
+			one := infra.MakeListNode([]int{1, 2, 3, 4, 5})
 			got := RotateList(one, 5)
-			want := infra.MakeListNilEnd([]int{1, 2, 3, 4, 5})
+			want := infra.MakeListNode([]int{1, 2, 3, 4, 5})
 
 			if !infra.CompareTwoIntList(got, want) {
 				t.Errorf("got is not equal with want")
