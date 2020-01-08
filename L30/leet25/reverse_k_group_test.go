@@ -17,13 +17,8 @@ func TestReverseKGroup(t *testing.T) {
 			got := ReverseKGroup(arr, 2)
 			want := infra.MakeListNode([]int{2, 1, 4, 3, 5})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -35,15 +30,9 @@ func TestReverseKGroup(t *testing.T) {
 			got := ReverseKGroup(arr, 3)
 			want := infra.MakeListNode([]int{3, 2, 1, 4, 5})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
-
 		})
 
 	})

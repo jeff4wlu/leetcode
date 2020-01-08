@@ -45,3 +45,17 @@ func MakeListNilEnd(nums []int) *ListNode {
 
 	return res
 }
+
+func CompareTwoIntList(got, want *ListNode) bool {
+	for got != nil && want != nil {
+		if got.Value != want.Value {
+			return false
+		}
+		got = got.Next
+		want = want.Next
+		if got != nil && want == nil || got == nil && want != nil {
+			return false
+		}
+	}
+	return true
+}

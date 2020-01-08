@@ -16,13 +16,8 @@ func TestMergeTwoSortedList(t *testing.T) {
 			got := MergeTwoSortedList(one, two)
 			want := infra.MakeListNode([]int{1, 1, 2, 3, 4, 4})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})

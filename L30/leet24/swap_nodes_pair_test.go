@@ -17,13 +17,8 @@ func TestSwapNodesPair(t *testing.T) {
 			got := SwapNodesPair(arr)
 			want := infra.MakeListNode([]int{2, 1, 4, 3})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})

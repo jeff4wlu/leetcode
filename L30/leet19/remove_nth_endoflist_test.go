@@ -15,13 +15,8 @@ func TestRemoveNthEndofList(t *testing.T) {
 			got := RemoveNthEndofList(one, 2)
 			want := infra.MakeListNode([]int{1, 2, 3, 5})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -31,13 +26,8 @@ func TestRemoveNthEndofList(t *testing.T) {
 			got := RemoveNthEndofList(one, 5)
 			want := infra.MakeListNode([]int{2, 3, 4, 5})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -47,13 +37,8 @@ func TestRemoveNthEndofList(t *testing.T) {
 			got := RemoveNthEndofList(one, 1)
 			want := infra.MakeListNode([]int{1, 2, 3, 4})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})

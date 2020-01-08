@@ -16,13 +16,8 @@ func TestAddTwoNum(t *testing.T) {
 			got := AddTwoNum(one, two)
 			want := infra.MakeListNode([]int{2, 4, 6})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -33,13 +28,8 @@ func TestAddTwoNum(t *testing.T) {
 			got := AddTwoNum(one, two)
 			want := infra.MakeListNode([]int{8, 9, 9, 1})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -50,13 +40,8 @@ func TestAddTwoNum(t *testing.T) {
 			got := AddTwoNum(one, two)
 			want := infra.MakeListNode([]int{8, 9, 0, 1})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})

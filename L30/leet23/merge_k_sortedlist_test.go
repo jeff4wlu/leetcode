@@ -19,13 +19,8 @@ func TestMergeKSortedList(t *testing.T) {
 			got := MergeKSortedList(arr)
 			want := infra.MakeListNode([]int{1, 1, 2, 3, 4, 4, 5, 6})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})

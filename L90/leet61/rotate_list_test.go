@@ -15,13 +15,8 @@ func TestRotateList(t *testing.T) {
 			got := RotateList(one, 2)
 			want := infra.MakeListNilEnd([]int{4, 5, 1, 2, 3})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -31,13 +26,8 @@ func TestRotateList(t *testing.T) {
 			got := RotateList(one, 7)
 			want := infra.MakeListNilEnd([]int{4, 5, 1, 2, 3})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -47,13 +37,8 @@ func TestRotateList(t *testing.T) {
 			got := RotateList(one, 4)
 			want := infra.MakeListNilEnd([]int{2, 3, 4, 5, 1})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
@@ -62,13 +47,8 @@ func TestRotateList(t *testing.T) {
 			got := RotateList(one, 5)
 			want := infra.MakeListNilEnd([]int{1, 2, 3, 4, 5})
 
-			for got != nil && want != nil {
-				if got.Value != want.Value {
-					t.Errorf("got is not equal with want")
-					break
-				}
-				got = got.Next
-				want = want.Next
+			if !infra.CompareTwoIntList(got, want) {
+				t.Errorf("got is not equal with want")
 			}
 
 		})
