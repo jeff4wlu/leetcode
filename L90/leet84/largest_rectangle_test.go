@@ -31,6 +31,17 @@ func TestLargestRect(t *testing.T) {
 
 		})
 
+		Convey("包含0", func() {
+
+			got := LargestRect([]int{2, 0, 2, 1, 1})
+			want := 3
+
+			if got != want {
+				t.Errorf("got %d, want %d", got, want)
+			}
+
+		})
+
 	})
 
 	Convey("TestLargestRect1", t, func() {
@@ -49,6 +60,17 @@ func TestLargestRect(t *testing.T) {
 
 			got := LargestRect1([]int{20, 1, 5, 6, 2, 3})
 			want := 20
+
+			if got != want {
+				t.Errorf("got %d, want %d", got, want)
+			}
+
+		})
+
+		Convey("包含0", func() {
+
+			got := LargestRect1([]int{2, 0, 2, 1, 1})
+			want := 3
 
 			if got != want {
 				t.Errorf("got %d, want %d", got, want)

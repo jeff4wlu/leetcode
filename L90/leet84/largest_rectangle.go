@@ -15,6 +15,7 @@ func LargestRect(in []int) int {
 }
 
 //对算法1进行剪枝，只计算峰值的遍历。峰值就是当下一个比当前小时，当前是峰值。但时间复杂度仍然是n*n
+//最右边的也算是高峰，所以必须>=
 func LargestRect1(in []int) int {
 
 	var max int
@@ -30,7 +31,7 @@ func LargestRect1(in []int) int {
 		}
 	}
 
-	if in[n-1] > in[n-2] {
+	if in[n-1] >= in[n-2] { //这里必须>=
 		tmp := interateCurHeight(n-1, in)
 		if max < tmp {
 			max = tmp
