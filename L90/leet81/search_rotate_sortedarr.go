@@ -2,6 +2,7 @@ package leet81
 
 import "leetcode/infra"
 
+//leet33的加强版
 func SearchRotateSortedArr(in []int, target int) bool {
 
 	return solve(in, target)
