@@ -1,6 +1,7 @@
 package leet30
 
 import (
+	"leetcode/infra"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -17,15 +18,8 @@ func TestSubstrConcatAllWords(t *testing.T) {
 			got := SubstrConcatAllWords(s, words)
 			want := []int{0, 9}
 
-			if len(got) != len(want) {
-				t.Errorf("got is not equal with want")
-			} else {
-				for i := 0; i < len(got); i++ {
-					if got[i] != want[i] {
-						t.Errorf("got is not equal with want")
-						break
-					}
-				}
+			if !infra.IntArrCmp(got, want) {
+				t.Errorf("failed")
 			}
 
 		})
@@ -38,15 +32,8 @@ func TestSubstrConcatAllWords(t *testing.T) {
 			got := SubstrConcatAllWords(s, words)
 			var want []int
 
-			if len(got) != len(want) {
-				t.Errorf("got is not equal with want")
-			} else {
-				for i := 0; i < len(got); i++ {
-					if got[i] != want[i] {
-						t.Errorf("got is not equal with want")
-						break
-					}
-				}
+			if !infra.IntArrCmp(got, want) {
+				t.Errorf("failed")
 			}
 
 		})

@@ -1,6 +1,7 @@
 package leet75
 
 import (
+	"leetcode/infra"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -15,11 +16,8 @@ func TestSortCols(t *testing.T) {
 			SortCols(&got)
 			want := []int{0, 0, 1, 1, 2, 2}
 
-			for i := 0; i < len(got); i++ {
-				if got[i] != want[i] {
-					t.Errorf("failed")
-					break
-				}
+			if !infra.IntArrCmp(got, want) {
+				t.Errorf("failed")
 			}
 
 		})

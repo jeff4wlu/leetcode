@@ -15,7 +15,7 @@ func TestUniquePaths(t *testing.T) {
 			_, got := UniquePaths(2, 3)
 			want := [][]string{{"right", "right", "down"}, {"right", "down", "right"}, {"down", "right", "right"}}
 
-			if !infra.StringarrCollectionComp(got, want) {
+			if !infra.StringArrCollectionComp(got, want) {
 				t.Errorf("failed")
 			}
 

@@ -1,6 +1,7 @@
 package leet54
 
 import (
+	"leetcode/infra"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -18,10 +19,8 @@ func TestSpiralMatrix(t *testing.T) {
 
 			want := []int{1, 2, 3, 6, 9, 8, 7, 4, 5}
 
-			for i := 0; i < len(got); i++ {
-				if got[i] != want[i] {
-					t.Errorf("failed")
-				}
+			if !infra.IntArrCmp(got, want) {
+				t.Errorf("failed")
 			}
 
 		})
@@ -35,10 +34,8 @@ func TestSpiralMatrix(t *testing.T) {
 
 			want := []int{1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7}
 
-			for i := 0; i < len(got); i++ {
-				if got[i] != want[i] {
-					t.Errorf("failed")
-				}
+			if !infra.IntArrCmp(got, want) {
+				t.Errorf("failed")
 			}
 
 		})

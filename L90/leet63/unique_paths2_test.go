@@ -20,7 +20,7 @@ func TestUniquePaths2(t *testing.T) {
 			_, got := UniquePaths2(grid)
 			want := [][]string{{"right", "right", "down", "down"}, {"down", "down", "right", "right"}}
 
-			if !infra.StringarrCollectionComp(got, want) {
+			if !infra.StringArrCollectionComp(got, want) {
 				t.Errorf("failed")
 			}
 

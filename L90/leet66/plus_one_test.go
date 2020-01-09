@@ -1,6 +1,7 @@
 package leet66
 
 import (
+	"leetcode/infra"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -14,14 +15,8 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{1, 2, 3})
 			want := []int{1, 2, 4}
 
-			if len(got) != len(want) {
+			if !infra.IntArrCmp(got, want) {
 				t.Errorf("failed")
-			}
-
-			for i := 0; i < len(got); i++ {
-				if got[i] != want[i] {
-					t.Errorf("failed")
-				}
 			}
 
 		})
@@ -31,14 +26,8 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{1})
 			want := []int{2}
 
-			if len(got) != len(want) {
+			if !infra.IntArrCmp(got, want) {
 				t.Errorf("failed")
-			}
-
-			for i := 0; i < len(got); i++ {
-				if got[i] != want[i] {
-					t.Errorf("failed")
-				}
 			}
 
 		})
@@ -48,14 +37,8 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{9})
 			want := []int{1, 0}
 
-			if len(got) != len(want) {
+			if !infra.IntArrCmp(got, want) {
 				t.Errorf("failed")
-			}
-
-			for i := 0; i < len(got); i++ {
-				if got[i] != want[i] {
-					t.Errorf("failed")
-				}
 			}
 
 		})
@@ -65,14 +48,8 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{9, 9})
 			want := []int{1, 0, 0}
 
-			if len(got) != len(want) {
+			if !infra.IntArrCmp(got, want) {
 				t.Errorf("failed")
-			}
-
-			for i := 0; i < len(got); i++ {
-				if got[i] != want[i] {
-					t.Errorf("failed")
-				}
 			}
 
 		})
