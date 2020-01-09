@@ -16,7 +16,7 @@ func TestMergeSortedArr(t *testing.T) {
 			MergeSortedArr(got, []int{2, 5, 6}, 3, 3)
 			want := []int{1, 2, 2, 3, 5, 6}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -28,7 +28,7 @@ func TestMergeSortedArr(t *testing.T) {
 			MergeSortedArr(got, []int{2, 5, 6}, 3, 3)
 			want := []int{1, 2, 2, 5, 6, 6}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 

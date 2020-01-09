@@ -18,7 +18,7 @@ func TestSubstrConcatAllWords(t *testing.T) {
 			got := SubstrConcatAllWords(s, words)
 			want := []int{0, 9}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -32,7 +32,7 @@ func TestSubstrConcatAllWords(t *testing.T) {
 			got := SubstrConcatAllWords(s, words)
 			var want []int
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 

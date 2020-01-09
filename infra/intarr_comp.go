@@ -63,7 +63,8 @@ func compOneString(a, b []string) bool {
 	return true
 }
 
-func IntArrCmp(a, b []int) bool {
+//与顺序有关
+func IntArrSeqCmp(a, b []int) bool {
 
 	if len(a) != len(b) {
 		return false
@@ -73,6 +74,29 @@ func IntArrCmp(a, b []int) bool {
 		if a[i] != b[i] {
 			return false
 		}
+	}
+
+	return true
+}
+
+//与顺序无关
+func IntArrNonSeqCmp(a, b []int) bool {
+
+	if len(a) != len(b) {
+		return false
+	}
+
+	for i := 0; i < len(a); i++ {
+		found := false
+		for j := 0; j < len(b); j++ {
+			if a[i] == b[j] {
+				found = true
+			}
+		}
+		if !found {
+			return false
+		}
+
 	}
 
 	return true

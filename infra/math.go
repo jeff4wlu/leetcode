@@ -27,3 +27,11 @@ func Fatorial(n int) int {
 	}
 	return factorial
 }
+
+func Str2DEC(s string) (num int) {
+	l := len(s)
+	for i := l - 1; i >= 0; i-- {
+		num += (int(s[l-i-1]) & 0xf) << uint8(i)
+	}
+	return
+}

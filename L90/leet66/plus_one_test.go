@@ -15,7 +15,7 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{1, 2, 3})
 			want := []int{1, 2, 4}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -26,7 +26,7 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{1})
 			want := []int{2}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -37,7 +37,7 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{9})
 			want := []int{1, 0}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -48,7 +48,7 @@ func TestPlusOne(t *testing.T) {
 			got := PlusOne([]int{9, 9})
 			want := []int{1, 0, 0}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 

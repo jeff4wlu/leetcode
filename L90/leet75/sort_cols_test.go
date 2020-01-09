@@ -16,7 +16,7 @@ func TestSortCols(t *testing.T) {
 			SortCols(&got)
 			want := []int{0, 0, 1, 1, 2, 2}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 

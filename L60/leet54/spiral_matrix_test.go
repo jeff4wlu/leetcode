@@ -19,7 +19,7 @@ func TestSpiralMatrix(t *testing.T) {
 
 			want := []int{1, 2, 3, 6, 9, 8, 7, 4, 5}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 
@@ -34,7 +34,7 @@ func TestSpiralMatrix(t *testing.T) {
 
 			want := []int{1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7}
 
-			if !infra.IntArrCmp(got, want) {
+			if !infra.IntArrSeqCmp(got, want) {
 				t.Errorf("failed")
 			}
 
