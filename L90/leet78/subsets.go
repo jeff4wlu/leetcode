@@ -1,38 +1,33 @@
 package leet78
 
+//dfs,有点像暴力破解，回溯。题目要求按升序排。
+//原集合中每一个元素在子集中有两种状态：要么存在、要么不存在。这样构造子集的过程中每个元素就有两种选择方法：选择、不选择，
+//因此可以构造一颗二叉树，例如对于例子中给的集合[1,2,3]，构造的二叉树如下（左子树表示选择该层处理的元素，右子树不选择），最后得到的叶子节点就是子集：
 func Subsets(sets []int) [][]int {
 
 	res := [][]int{}
 	path := []int{}
 
-	for i := 0; i < len(sets); i++ {
-		for j := 0; j < len(sets); j++ {
-			solve(sets[j], i+1, sets[j+1:], path, &res)
-		}
+	dfs(sets, 0, path, &res)
 
-	}
-	return append(res, []int{})
+	return res
 }
 
-func solve(el, length int, rest, path []int, res *[][]int) {
+func dfs(in []int, idx int, path []int, res *[][]int) {
 
-	pLen := len(path) + 1
+	if idx == len(in) { //已经没有元素来做决定了
 
-	if pLen > length {
-		return
-	}
-
-	if pLen == length {
-		path = append(path, el)
-		tmp := make([]int, pLen)
+		tmp := make([]int, len(path))
 		copy(tmp, path)
-		(*res) = append((*res), tmp)
+		*res = append(*res, tmp)
 		return
 	}
 
-	path = append(path, el)
-	for i := 0; i < len(rest); i++ {
-		solve(rest[i], length, rest[i+1:], path, res)
-	}
+	//不选择此元素
+	dfs(in, idx+1, path, res)
+
+	//选择此元素做排列
+	path = append(path, in[idx])
+	dfs(in, idx+1, path, res)
 
 }
