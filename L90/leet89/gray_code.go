@@ -1,8 +1,9 @@
 package leet89
 
-import "math"
-
-import "leetcode/infra"
+import (
+	"math"
+	"strconv"
+)
 
 func GrayCode(n int) []int {
 
@@ -19,7 +20,7 @@ func GrayCode(n int) []int {
 
 	resNums := []int{}
 	for i := 0; i < len(res); i++ {
-		num := infra.Str2DEC(res[i])
+		num, _ := strconv.Atoi(res[i])
 		resNums = append(resNums, num)
 	}
 	return resNums

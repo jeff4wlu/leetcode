@@ -1,6 +1,6 @@
 package leet91
 
-import "leetcode/infra"
+import "strconv"
 
 //dfs穷举和回溯法。也可以用dp
 //任何算法只要可以使用两种选择来穷举的，都可以用二叉树的dfs。参见leet89,90
@@ -36,8 +36,13 @@ func dfs(s string, idx int, path string, res *[]string) {
 	path = tmp
 
 	//选择两位数来decode
-	if idx+1 < n && infra.Str2DEC(s[idx:idx+2]) <= 26 {
-		path += s[idx : idx+2]
-		dfs(s, idx+2, path, res)
+
+	if idx+1 < n {
+		num, _ := strconv.Atoi(s[idx : idx+2])
+		if num <= 26 {
+			path += s[idx : idx+2]
+			dfs(s, idx+2, path, res)
+		}
+
 	}
 }

@@ -20,6 +20,9 @@ func StringArrCollectionComp(a, b [][]string) bool {
 }
 
 func StringArrComp(a, b []string) bool {
+	if len(a) == 0 || len(b) == 0 {
+		return false
+	}
 	for _, av := range a {
 		found := false
 		for _, bv := range b {
