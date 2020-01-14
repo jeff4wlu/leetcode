@@ -11,6 +11,7 @@ type BTIntNode struct {
 	Right *BTIntNode
 }
 
+//这个是前序打印
 func PrintTree(tnode *BTIntNode, t *testing.T) {
 
 	if tnode == nil {
