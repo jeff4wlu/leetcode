@@ -4,7 +4,7 @@ package infra
 func IntArr2DComp(got, want [][]int) bool {
 
 	for i := 0; i < len(got); i++ {
-		for j := 0; j < len(got[0]); j++ {
+		for j := 0; j < len(got[i]); j++ {
 			if got[i][j] != want[i][j] {
 				return false
 			}
