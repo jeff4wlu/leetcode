@@ -16,7 +16,7 @@ func TestUniqueBST(t *testing.T) {
 			got := UniqueBST(3)
 			fmt.Println()
 			for _, v := range got {
-				printTree(v, t)
+				infra.PrintTree(v, t)
 				fmt.Println()
 			}
 
@@ -24,15 +24,4 @@ func TestUniqueBST(t *testing.T) {
 
 	})
 
-}
-
-func printTree(tnode *infra.BTIntNode, t *testing.T) {
-
-	if tnode == nil {
-		fmt.Printf(" null")
-		return
-	}
-	fmt.Printf(" %d", tnode.Value)
-	printTree(tnode.Left, t)
-	printTree(tnode.Right, t)
 }
