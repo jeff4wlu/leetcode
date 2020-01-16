@@ -1,4 +1,4 @@
-package leet121
+package leet122
 
 import (
 	"testing"
@@ -6,11 +6,11 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-func TestBestTimeStock(t *testing.T) {
+func TestBestTimeStock2(t *testing.T) {
 
-	Convey("TestBestTimeStock", t, func() {
+	Convey("TestBestTimeStock2", t, func() {
 		Convey("1", func() {
-			got := BestTimeStock([]int{6, 2, 9, 8, 1, 3, 7})
+			got := BestTimeStock2([]int{7, 1, 5, 3, 6, 4})
 			want := 7
 
 			if got != want {
