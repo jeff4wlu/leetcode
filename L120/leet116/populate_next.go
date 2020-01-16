@@ -16,9 +16,9 @@ func PopulateNext(tn *treeLinkNode) {
 
 	start := tn
 
-	for start.left != nil {
+	for start.left != nil { //下一层
 		cur := start
-		for cur != nil {
+		for cur != nil { //同一层下一个
 			cur.left.next = cur.right
 			if cur.next != nil {
 				cur.right.next = cur.next.left
