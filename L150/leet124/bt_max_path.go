@@ -2,7 +2,7 @@ package leet124
 
 import "leetcode/infra"
 
-//分治
+//dfs
 func BTMaxPath(tn *infra.BTIntNode) int {
 	return helper(tn)
 }
