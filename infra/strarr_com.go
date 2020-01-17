@@ -2,6 +2,12 @@ package infra
 
 //与顺序无关
 func StringArrCollectionComp(a, b [][]string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	if len(a) == 0 {
+		return true
+	}
 	for _, av := range a {
 		found := false
 		for _, bv := range b {
