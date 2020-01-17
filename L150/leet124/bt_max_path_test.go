@@ -16,13 +16,6 @@ func TestBTMaxPath(t *testing.T) {
 			tmp.Value = -1
 			tmp.Left = &infra.BTIntNode{}
 			tmp.Left.Value = -2
-			//tmp.Right = &infra.BTIntNode{}
-			//tmp.Right.Value = 3
-			/*
-				tmp.Right.Left = &infra.BTIntNode{}
-				tmp.Right.Left.Value = 15
-				tmp.Right.Right = &infra.BTIntNode{}
-				tmp.Right.Right.Value = 7*/
 
 			got := BTMaxPath(tmp)
 			want := -1
@@ -41,11 +34,6 @@ func TestBTMaxPath(t *testing.T) {
 			tmp.Left.Value = 2
 			tmp.Right = &infra.BTIntNode{}
 			tmp.Right.Value = 3
-			/*
-				tmp.Right.Left = &infra.BTIntNode{}
-				tmp.Right.Left.Value = 15
-				tmp.Right.Right = &infra.BTIntNode{}
-				tmp.Right.Right.Value = 7*/
 
 			got := BTMaxPath(tmp)
 			want := 6
