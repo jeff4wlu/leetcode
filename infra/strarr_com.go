@@ -26,6 +26,10 @@ func StringArrCollectionComp(a, b [][]string) bool {
 }
 
 func StringArrComp(a, b []string) bool {
+	if len(a) == 0 && len(b) == 0 {
+		return true
+	}
+
 	if len(a) == 0 || len(b) == 0 {
 		return false
 	}
