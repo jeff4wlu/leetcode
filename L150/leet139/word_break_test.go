@@ -6,9 +6,9 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-func TestSingleNum(t *testing.T) {
+func TestWordBreak(t *testing.T) {
 
-	Convey("TestSingleNum", t, func() {
+	Convey("TestWordBreak", t, func() {
 		Convey("用例1", func() {
 
 			got := WordBreak("leetcode", []string{"leet", "code"})

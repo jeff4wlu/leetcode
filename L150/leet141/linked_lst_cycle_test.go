@@ -6,9 +6,9 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-func TestSingleNum(t *testing.T) {
+func TestLinkedLstCycle(t *testing.T) {
 
-	Convey("TestSingleNum", t, func() {
+	Convey("TestLinkedLstCycle", t, func() {
 		Convey("用例1", func() {
 
 			got := LinkedLstCycle([]int{3, 2, 0, -4}, 1)

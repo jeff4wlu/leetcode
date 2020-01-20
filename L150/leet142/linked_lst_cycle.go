@@ -1,37 +1,34 @@
 package leet142
 
-type lstNode struct {
-	val  int
-	next *lstNode
-}
+import "leetcode/infra"
 
-func LinkedLstCycle(in []int, pos int) (start, res *lstNode) {
+func LinkedLstCycle(in []int, pos int) (start, res *infra.ListNode) {
 
 	//构造链表
-	var next, p *lstNode
-	tmp := new(lstNode)
+	var Next, p *infra.ListNode
+	tmp := new(infra.ListNode)
 	tail := tmp
-	head := new(lstNode)
+	head := new(infra.ListNode)
 	for i := len(in) - 1; i >= 0; i-- {
-		tmp.val = in[i]
-		tmp.next = next
-		next = tmp
+		tmp.Value = in[i]
+		tmp.Next = Next
+		Next = tmp
 		if i == 0 {
-			head.next = tmp
+			head.Next = tmp
 		}
 		if i == pos {
 			p = tmp
 		}
-		tmp = new(lstNode)
+		tmp = new(infra.ListNode)
 	}
-	tail.next = p
+	tail.Next = p
 
 	//检查是否有循环
 	slow, fast := head, head
-	var met *lstNode
-	for slow != nil && fast != nil && fast.next != nil {
-		slow = slow.next
-		fast = fast.next.next
+	var met *infra.ListNode
+	for slow != nil && fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
 		if slow == fast {
 			met = slow
 			break
@@ -43,8 +40,8 @@ func LinkedLstCycle(in []int, pos int) (start, res *lstNode) {
 	if met != nil {
 		slow, fast = head, met
 		for slow != nil {
-			slow = slow.next
-			fast = fast.next
+			slow = slow.Next
+			fast = fast.Next
 			if slow == fast {
 				met = slow
 				break
