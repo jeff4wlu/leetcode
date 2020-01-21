@@ -26,6 +26,13 @@ func MakeListNode(nums []int) *ListNode {
 }
 
 func CompareTwoIntList(got, want *ListNode) bool {
+	if got == nil && want == nil {
+		return true
+	}
+	if got == nil || want == nil {
+		return false
+	}
+
 	for got != nil && want != nil {
 		if got.Value != want.Value {
 			return false

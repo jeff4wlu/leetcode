@@ -18,6 +18,10 @@ func RotateList(lst *infra.ListNode, k int) *infra.ListNode {
 		lst = lst.Next
 	}
 
+	if k%size == 0 {
+		return copy
+	}
+
 	step := size - k%size
 
 	//idx是链表头的前一个node

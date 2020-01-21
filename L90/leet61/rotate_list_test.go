@@ -42,7 +42,7 @@ func TestRotateList(t *testing.T) {
 			}
 
 		})
-		Convey("边界2", func() {
+		Convey("刚好一个循环", func() {
 			one := infra.MakeListNode([]int{1, 2, 3, 4, 5})
 			got := RotateList(one, 5)
 			want := infra.MakeListNode([]int{1, 2, 3, 4, 5})
