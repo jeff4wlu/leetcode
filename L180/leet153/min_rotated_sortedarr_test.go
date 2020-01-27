@@ -31,6 +31,17 @@ func TestMaxPro(t *testing.T) {
 
 		})
 
+		Convey("重复值", func() {
+			nums := []int{0, 1, 2, 2, 2, 0}
+			got := MinRotatedSortedArr(nums)
+			want := 0
+
+			if got != want {
+				t.Errorf("got %d, want  %d", got, want)
+			}
+
+		})
+
 	})
 
 }
