@@ -34,6 +34,17 @@ func TestMaxSubarr(t *testing.T) {
 
 		})
 
+		Convey("特殊情况", func() {
+			nums := []int{-2, -5, -4}
+			got := MaxSubarr2(nums)
+			want := -2
+
+			if got != want {
+				t.Errorf("got %d, want  %d", got, want)
+			}
+
+		})
+
 	})
 
 	Convey("TestMaxSubarr3", t, func() {

@@ -2,7 +2,7 @@ package leet53
 
 import "leetcode/infra"
 
-//暴力破解,复杂度为O(n2)
+//暴力破解,复杂度为O(n2),最直接的思路
 func MaxSubarr1(in []int) int {
 
 	n := len(in)
@@ -16,7 +16,6 @@ func MaxSubarr1(in []int) int {
 
 	max := infra.INT32_MIN
 	for i := 0; i < n; i++ {
-		max = infra.IntMax(max, in[i])
 		tmp := in[i]
 		for j := i + 1; j < n; j++ {
 			tmp += in[j]
@@ -54,6 +53,7 @@ func MaxSubarr2(in []int) int {
 }
 
 //分治，列举出所有可能性，逐步分解问题。最后汇总。
+//最大值的子段可能在数组左边，也可能在右边，也可能在中间。所以求出三种可能然后求出最大那种。
 func MaxSubarr3(in []int) int {
 	return helper(in)
 }
