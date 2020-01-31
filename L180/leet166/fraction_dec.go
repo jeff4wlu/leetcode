@@ -1,6 +1,9 @@
 package leet166
 
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 func FractionDec(num, denominator int) string {
 
@@ -23,37 +26,17 @@ func FractionDec(num, denominator int) string {
 	res += strconv.Itoa(a)
 
 	dict := map[int]int{}
-	recur := false
 	for b != 0 {
 		a = b * 10 / denominator
 		b = b * 10 % denominator
-		dict[a]++
-		if dict[a] > 1 {
-			recur = true
-			break
+		if _, ok := dict[a]; ok {
+			pos := dict[a]
+			return fmt.Sprintf("%s.%s(%s)", res, string(tmp[:pos]), string(tmp[pos:]))
 		}
+
 		tmp += strconv.Itoa(a)
+		dict[a] = len(tmp) - 1
 	}
 
-	c := strconv.Itoa(a)
-
-	i := len(tmp) - 1
-	for ; i >= 0; i-- {
-		if tmp[i] != c[0] {
-			break
-		}
-	}
-
-	res += "."
-	res += tmp[:i+1]
-	if recur {
-		res += "("
-	}
-
-	res += tmp[i+1:]
-	if recur {
-		res += ")"
-	}
-
-	return res
+	return fmt.Sprintf("%s.%s", res, string(tmp))
 }
