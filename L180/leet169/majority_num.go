@@ -4,6 +4,7 @@ package leet169
 func MajorityNum1(in []int) int {
 
 	n := len(in)
+	//冒泡排序
 	for i := n - 1; i > 0; i-- {
 		for j := 0; j < i; j++ {
 			if in[j] > in[j+1] {
