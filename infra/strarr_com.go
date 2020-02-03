@@ -25,28 +25,29 @@ func StringArrCollectionComp(a, b [][]string) bool {
 	return true
 }
 
+//与顺序无关
 func StringArrComp(a, b []string) bool {
-	if len(a) == 0 && len(b) == 0 {
-		return true
-	}
 
-	if len(a) == 0 || len(b) == 0 {
+	if len(a) != len(b) {
 		return false
 	}
-	for _, av := range a {
-		found := false
-		for _, bv := range b {
-			if av == bv {
-				found = true
-				break
-			}
-		}
-
-		if !found {
+	dict := map[string]int{}
+	for _, v := range a {
+		dict[v]++
+	}
+	for _, v := range b {
+		if _, ok := dict[v]; !ok {
 			return false
 		}
-
+		dict[v]--
 	}
+
+	for _, v := range a {
+		if dict[v] != 0 {
+			return false
+		}
+	}
+
 	return true
 }
 
