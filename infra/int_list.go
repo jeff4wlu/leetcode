@@ -5,6 +5,12 @@ type ListNode struct {
 	Next  *ListNode
 }
 
+type DListNode struct {
+	Value int
+	Next  *DListNode
+	Pre   *DListNode
+}
+
 func MakeListNode(nums []int) *ListNode {
 
 	if len(nums) == 0 {
