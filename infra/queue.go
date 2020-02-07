@@ -30,3 +30,16 @@ func (q *Queue) IsEmpty() bool {
 	}
 	return false
 }
+
+func (q *Queue) Size() int {
+
+	return len(q.q)
+}
+
+func (q *Queue) Peek() int {
+
+	if len(q.q) > 0 {
+		return q.q[0].(int)
+	}
+	return -1
+}
