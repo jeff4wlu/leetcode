@@ -39,7 +39,7 @@ func TestHeap(t *testing.T) {
 			h := NewHeap2(true)
 			arr := []int{9, 3, 7, 6, 5, 1, 10, 2}
 			for i := 0; i < len(arr); i++ {
-				h.TopInsert(arr[i])
+				h.Insert(arr[i])
 			}
 			/*
 				got := h.tree
@@ -56,7 +56,7 @@ func TestHeap(t *testing.T) {
 			h := NewHeap2(false)
 			arr := []int{9, 4, 2, 3, 5, 1, 8, 6, 7, 0}
 			for i := 0; i < len(arr); i++ {
-				h.BtmInsert(arr[i])
+				h.Insert(arr[i])
 			}
 			/*
 				got := h.tree
@@ -76,7 +76,7 @@ func TestHeap(t *testing.T) {
 			h := NewHeap2(true)
 			arr := []int{9, 3, 7, 6, 5, 1, 10, 2}
 			for i := 0; i < len(arr); i++ {
-				h.TopInsert(arr[i])
+				h.Insert(arr[i])
 			}
 			got := h.HeapSort(true)
 			want := []int{1, 2, 3, 5, 6, 7, 9, 10}
@@ -92,7 +92,7 @@ func TestHeap(t *testing.T) {
 			h := NewHeap2(false)
 			arr := []int{9, 4, 2, 3, 5, 1, 8, 6, 7, 0}
 			for i := 0; i < len(arr); i++ {
-				h.BtmInsert(arr[i])
+				h.Insert(arr[i])
 			}
 			got := h.HeapSort(false)
 			want := []int{9, 8, 7, 6, 5, 4, 3, 2, 1, 0}

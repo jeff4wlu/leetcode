@@ -27,55 +27,69 @@ func (h *Heap) init(nums []int, isTop bool) {
 	h.tree = make([]int, h.size)
 	copy(h.tree, nums)
 
-	if h.isTop {
-		h.BuildTopHeap()
-	} else {
-		h.BuildBtmHeap()
-	}
+	h.BuildHeap()
 }
 
-//小顶堆
-func (h *Heap) BuildTopHeap() {
+func (h *Heap) BuildHeap() {
 	//求最后一个非叶子结点(0base)
-	for i := h.size/2 - 1; i >= 0; i-- {
-		h.adjustTopHeap(i)
+	for i := (h.size - 1) / 2; i >= 0; i-- {
+		//这里必须使用向下调整，因为向上调整后下面可能又乱了，但调整机会已经过去了。
+		h.ShiftDown(i)
 	}
 }
 
-//大顶堆
-func (h *Heap) BuildBtmHeap() {
-	//求最后一个非叶子结点(0base)
-	for i := h.size/2 - 1; i >= 0; i-- {
-		h.adjustBtmHeap(i)
-	}
-}
+//向下调整
+//确保node是非叶子结点,且只适用于唯一节点值。
+//本操作是对单一结点受影响做调整（即默认原来就是堆），而不是全堆
+func (h *Heap) ShiftDown(node int) {
+	for node <= h.size/2-1 && node >= 0 {
+		k := node*2 + 1 //左结点
+		if h.isTop {    //小顶堆
+			if k+1 < h.size && h.tree[k] > h.tree[k+1] { //求出最小值子结点的位置
+				k++
+			}
+			if h.tree[node] < h.tree[k] {
+				break
+			}
 
-func (h *Heap) adjustTopHeap(node int) {
-	if node > h.size/2-1 { //确保被操作的是非叶子结点
-		return
-	}
-	k := node*2 + 1                              //左结点
-	if k+1 < h.size && h.tree[k] > h.tree[k+1] { //求出最小值子结点的位置
-		k++
-	}
-	if h.tree[node] > h.tree[k] {
+		} else { //大顶堆
+			if k+1 < h.size && h.tree[k] < h.tree[k+1] { //求出最小值子结点的位置
+				k++
+			}
+			if h.tree[node] > h.tree[k] {
+				break
+			}
+
+		}
 		h.tree[node], h.tree[k] = h.tree[k], h.tree[node]
-		h.adjustTopHeap(k) //由于交换后可能又导致子树不符合堆的条件，所以要调整子树
+		node = k //由于交换后可能又导致子树不符合堆的条件，所以要调整子树
+
 	}
 
 }
 
-func (h *Heap) adjustBtmHeap(node int) {
-	if node > h.size/2-1 { //确保被操作的是非叶子结点
-		return
-	}
-	k := node*2 + 1                              //左结点
-	if k+1 < h.size && h.tree[k] < h.tree[k+1] { //求出最小值子结点的位置
-		k++
-	}
-	if h.tree[node] < h.tree[k] {
+func (h *Heap) ShiftUp(node int) {
+	for node <= h.size/2-1 && node >= 0 {
+		k := node*2 + 1 //左结点
+		if h.isTop {    //小顶堆
+			if k+1 < h.size && h.tree[k] > h.tree[k+1] { //求出最小值子结点的位置
+				k++
+			}
+			if h.tree[node] < h.tree[k] {
+				break
+			}
+
+		} else { //大顶堆
+			if k+1 < h.size && h.tree[k] < h.tree[k+1] { //求出最小值子结点的位置
+				k++
+			}
+			if h.tree[node] > h.tree[k] {
+				break //不需要调整
+			}
+		}
 		h.tree[node], h.tree[k] = h.tree[k], h.tree[node]
-		h.adjustBtmHeap(k) //由于交换后可能又导致子树不符合堆的条件，所以要调整子树
+		node = h.parent(node) //由于交换后可能又导致子树不符合堆的条件，所以要调整子树
+
 	}
 
 }
@@ -90,47 +104,21 @@ func (h *Heap) parent(idx int) int {
 	return (idx - 1) / 2
 }
 
-//本方法适合处理流数据的优先值
-func (h *Heap) TopInsert(num int) {
-
-	h.tree = append(h.tree, num)
-	h.size++
-
-	parent := h.parent(h.size - 1)
-	for parent >= 0 {
-		k := parent*2 + 1
-		if k < h.size {
-			if k+1 < h.size && h.tree[k] > h.tree[k+1] {
-				k++
-			}
-			if h.tree[parent] > h.tree[k] {
-				h.tree[parent], h.tree[k] = h.tree[k], h.tree[parent]
-			}
-		}
-
-		parent = h.parent(parent)
+func (h *Heap) GetTop() int {
+	if h.size > 0 {
+		return h.tree[0]
 	}
+	return -1
 }
 
-func (h *Heap) BtmInsert(num int) {
+//本方法适合处理流数据的优先值
+//向上调整
+func (h *Heap) Insert(num int) {
 
 	h.tree = append(h.tree, num)
 	h.size++
 
-	parent := h.parent(h.size - 1)
-	for parent >= 0 {
-		k := parent*2 + 1
-		if k < h.size {
-			if k+1 < h.size && h.tree[k] < h.tree[k+1] {
-				k++
-			}
-			if h.tree[parent] < h.tree[k] {
-				h.tree[parent], h.tree[k] = h.tree[k], h.tree[parent]
-			}
-		}
-
-		parent = h.parent(parent)
-	}
+	h.ShiftUp((h.size - 1 - 1) / 2)
 }
 
 func (h *Heap) HeapSort(isTop bool) []int {
@@ -140,11 +128,7 @@ func (h *Heap) HeapSort(isTop bool) []int {
 		res = append(res, h.tree[0])
 		h.tree[0] = h.tree[h.size-1]
 		h.size--
-		if isTop {
-			h.BuildTopHeap()
-		} else {
-			h.BuildBtmHeap()
-		}
+		h.BuildHeap()
 	}
 
 	return res
