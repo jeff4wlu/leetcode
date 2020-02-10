@@ -112,7 +112,7 @@ func (h *Heap) GetTop() int {
 }
 
 //本方法适合处理流数据的优先值
-//向上调整
+//向上调整,暂时没有处理插入相同值的情况
 func (h *Heap) Insert(num int) {
 
 	h.tree = append(h.tree, num)
@@ -132,4 +132,22 @@ func (h *Heap) HeapSort(isTop bool) []int {
 	}
 
 	return res
+}
+
+func (h *Heap) Remove(num int) {
+
+	if h.size == 0 {
+		return
+	}
+
+	for i := 0; i < h.size; i++ {
+		if num == h.tree[i] {
+			h.tree[i], h.tree[h.size-1] = h.tree[h.size-1], h.tree[i]
+			h.tree = h.tree[:h.size-1]
+			h.size--
+			h.BuildHeap()
+			return
+		}
+	}
+
 }
