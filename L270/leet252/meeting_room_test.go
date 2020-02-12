@@ -27,7 +27,7 @@ func TestMeetingRoom(t *testing.T) {
 		Convey("2", func() {
 
 			ranges := [][]int{
-				{0, 3}, {5, 10}, {15, 20},
+				{15, 20}, {5, 10}, {0, 3},
 			}
 
 			got := MeetingRoom(ranges)
@@ -42,7 +42,7 @@ func TestMeetingRoom(t *testing.T) {
 		Convey("3", func() {
 
 			ranges := [][]int{
-				{0, 3}, {5, 15}, {10, 20},
+				{10, 20}, {0, 3}, {5, 15},
 			}
 
 			got := MeetingRoom(ranges)
