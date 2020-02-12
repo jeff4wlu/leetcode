@@ -1,7 +1,5 @@
 package leet247
 
-var dict []byte = []byte{'1', '6', '8', '9', '6', '8', '9', '1'}
-
 func StrobogrammaticNum(k int) []string {
 
 	var res []string
