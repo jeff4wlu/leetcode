@@ -1,0 +1,8 @@
+
+1、传递给函数的slice
+slice的结构是一个slice head。里面含有原生数组，size和容量。传给函数的是slice head，是一份
+copy。而如果函数内部做了append动作，当append改变了数组大小后会重新分配一个slice。这个slice与
+之前的是不一样的。
+a、所有函数传参都是by value
+b、切片slice实际是slice head结构
+c、append操作如果改动了size会分配新的地址。

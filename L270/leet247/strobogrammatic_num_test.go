@@ -24,7 +24,7 @@ func TestStrobogrammaticNum(t *testing.T) {
 		Convey("基数", func() {
 
 			got := StrobogrammaticNum(3)
-			want := []string{"111", "181", "818", "888", "689", "986", "619", "916"}
+			want := []string{"111", "181", "818", "888", "689", "986", "619", "916", "101", "609", "808", "906"}
 
 			if !infra.StringArrComp(got, want) {
 				t.Errorf("failed")
@@ -34,8 +34,8 @@ func TestStrobogrammaticNum(t *testing.T) {
 
 		Convey("基数1", func() {
 
-			got := StrobogrammaticNum(1)
-			want := []string{"1", "8"}
+			got := StrobogrammaticNum(4)
+			want := []string{"1001", "6009", "8008", "9006", "1111", "6119", "8118", "9116", "1691", "6699", "8698", "9696", "1881", "6889", "8888", "9886", "1961", "6969", "8968", "9966"}
 
 			if !infra.StringArrComp(got, want) {
 				t.Errorf("failed")

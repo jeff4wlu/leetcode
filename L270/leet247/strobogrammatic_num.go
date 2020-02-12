@@ -4,41 +4,49 @@ var dict []byte = []byte{'1', '6', '8', '9', '6', '8', '9', '1'}
 
 func StrobogrammaticNum(k int) []string {
 
-	path := make([]byte, k)
-	res := []string{}
-	dfs(k, 0, path, &res)
-	return res
-}
-
-//step是0base
-func dfs(k, step int, path []byte, res *[]string) {
-
-	mid := (k - 1) / 2 //index
-
-	if step == mid+1 {
-		(*res) = append((*res), string(path))
-		return
+	var res []string
+	n1 := []string{"0", "1", "8"}
+	n2 := []string{"11", "69", "88", "96"}
+	op := []string{"11", "69", "88", "96", "00"}
+	if k == 0 {
+		return []string{}
+	}
+	if k == 1 {
+		return n1
+	}
+	if k == 2 {
+		return n2
 	}
 
-	if k%2 != 0 && step == mid {
-		tmp := make([]byte, k)
-		copy(tmp, path)
-		tmp[step] = '1'
-		dfs(k, step+1, tmp, res)
-		tmp = make([]byte, k)
-		copy(tmp, path)
-		tmp[step] = '8'
-		dfs(k, step+1, tmp, res)
+	a := k / 2
+	b := k % 2
+	res = make([]string, 4)
+	copy(res, n2)
+	if b == 0 {
+
+		for i := 1; i < a; i++ {
+			tmp := []string{}
+			for _, v1 := range res {
+				for _, v2 := range op {
+					s := v1[:i] + v2 + v1[i:]
+					tmp = append(tmp, s)
+				}
+			}
+			res = tmp
+		}
 
 	} else {
-		for i := 0; i <= 3; i++ {
-			tmp := make([]byte, k)
-			copy(tmp, path)
-			tmp[step] = dict[i]
-			tmp[k-1-step] = dict[7-i]
-
-			dfs(k, step+1, tmp, res)
+		for i := 1; i <= a; i++ {
+			tmp := []string{}
+			for _, v1 := range res {
+				for _, v2 := range n1 {
+					s := v1[:i] + v2 + v1[i:]
+					tmp = append(tmp, s)
+				}
+			}
+			res = tmp
 		}
 	}
 
+	return res
 }
