@@ -20,7 +20,7 @@ func TestPermutations2(t *testing.T) {
 				{2, 1, 1},
 			}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got,true) {
 				t.Errorf("failed")
 			}
 
@@ -39,7 +39,7 @@ func TestPermutations2(t *testing.T) {
 				{2, 1, 2, 1},
 			}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got,true) {
 				t.Errorf("failed")
 			}
 

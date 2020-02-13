@@ -19,7 +19,7 @@ func TestInsertInterval(t *testing.T) {
 				{6, 9},
 			}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got,true) {
 				t.Errorf("failed")
 			}
 
@@ -33,7 +33,7 @@ func TestInsertInterval(t *testing.T) {
 				{1, 2}, {3, 10}, {12, 16},
 			}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got,true) {
 				t.Errorf("failed")
 			}
 

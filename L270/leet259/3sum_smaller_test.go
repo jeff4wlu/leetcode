@@ -19,7 +19,7 @@ func TestSumSmaller(t *testing.T) {
 				{-2, 0, 3},
 			}
 
-			if !infra.IntarrCollectionComp(got, want) {
+			if !infra.IntarrCollectionComp(got, want, false) {
 				t.Errorf("failed")
 			}
 

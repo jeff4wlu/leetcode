@@ -24,7 +24,7 @@ func TestSubsets(t *testing.T) {
 				{},
 			}
 
-			if got == nil || !infra.IntarrCollectionComp(got, want) {
+			if got == nil || !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 

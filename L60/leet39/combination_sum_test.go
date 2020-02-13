@@ -16,7 +16,7 @@ func TestCombinationSum(t *testing.T) {
 			res := CombinationSum(nums, 7)
 			got := [][]int{{2, 2, 3}, {7}}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got, false) {
 				t.Errorf("failed")
 			}
 
@@ -28,7 +28,7 @@ func TestCombinationSum(t *testing.T) {
 			res := CombinationSum(nums, 8)
 			got := [][]int{{2, 2, 2, 2}, {2, 3, 3}, {3, 5}}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got, false) {
 				t.Errorf("failed")
 			}
 

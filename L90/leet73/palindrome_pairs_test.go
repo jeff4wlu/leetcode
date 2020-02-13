@@ -16,7 +16,7 @@ func TestPalindromePairs(t *testing.T) {
 			got := PalindromePairs(strs)
 			want := [][]int{{0, 1}, {1, 0}}
 
-			if got == nil || !infra.IntarrCollectionComp(got, want) {
+			if got == nil || !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 
@@ -28,7 +28,7 @@ func TestPalindromePairs(t *testing.T) {
 			got := PalindromePairs(strs)
 			want := [][]int{{0, 1}, {1, 0}, {3, 2}, {2, 4}}
 
-			if got == nil || !infra.IntarrCollectionComp(got, want) {
+			if got == nil || !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 

@@ -16,7 +16,7 @@ func TestCombinationSumUniq(t *testing.T) {
 			res := CombinationSumUniq(nums, 8)
 			got := [][]int{{1, 7}, {1, 2, 5}, {2, 6}, {1, 1, 6}}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got, false) {
 				t.Errorf("failed")
 			}
 
@@ -28,7 +28,7 @@ func TestCombinationSumUniq(t *testing.T) {
 			res := CombinationSumUniq(nums, 5)
 			got := [][]int{{5}, {1, 2, 2}}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got, false) {
 				t.Errorf("failed")
 			}
 

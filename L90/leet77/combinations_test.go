@@ -22,7 +22,7 @@ func TestCombinations(t *testing.T) {
 				{1, 4},
 			}
 
-			if got == nil || !infra.IntarrCollectionComp(got, want) {
+			if got == nil || !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 

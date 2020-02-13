@@ -16,7 +16,7 @@ func TestNQueens(t *testing.T) {
 				{1, 3, 0, 2},
 				{2, 0, 3, 1},
 			}
-			if !infra.IntarrCollectionComp(got, want) {
+			if !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 

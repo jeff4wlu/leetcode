@@ -20,7 +20,7 @@ func TestMergeInterval(t *testing.T) {
 				{15, 18},
 			}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got,true) {
 				t.Errorf("failed")
 			}
 
@@ -34,7 +34,7 @@ func TestMergeInterval(t *testing.T) {
 				{1, 5},
 			}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got,true) {
 				t.Errorf("failed")
 			}
 
@@ -49,7 +49,7 @@ func TestMergeInterval(t *testing.T) {
 				{9, 11},
 			}
 
-			if res == nil || !infra.IntarrCollectionComp(res, got) {
+			if res == nil || !infra.IntarrCollectionComp(res, got,true) {
 				t.Errorf("failed")
 			}
 

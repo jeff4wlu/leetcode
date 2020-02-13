@@ -17,7 +17,7 @@ func TestCombinationSum3(t *testing.T) {
 				{1, 2, 4},
 			}
 
-			if !infra.IntarrCollectionComp(got, want) {
+			if !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 
@@ -30,7 +30,7 @@ func TestCombinationSum3(t *testing.T) {
 				{1, 2, 6}, {1, 3, 5}, {2, 3, 4},
 			}
 
-			if !infra.IntarrCollectionComp(got, want) {
+			if !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 

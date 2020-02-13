@@ -43,7 +43,7 @@ func TestPathSum2(t *testing.T) {
 				{5, 8, 4, 5},
 			}
 
-			if got == nil || !infra.IntarrCollectionComp(got, want) {
+			if got == nil || !infra.IntarrCollectionComp(got, want, true) {
 				t.Errorf("failed")
 			}
 
