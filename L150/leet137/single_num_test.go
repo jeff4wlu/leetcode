@@ -15,7 +15,7 @@ func TestSingleNum(t *testing.T) {
 			want := 3
 
 			if got != want {
-				t.Errorf("failed")
+				t.Errorf("got %d, want %d", got, want)
 			}
 
 		})
@@ -26,7 +26,32 @@ func TestSingleNum(t *testing.T) {
 			want := 99
 
 			if got != want {
-				t.Errorf("failed")
+				t.Errorf("got %d, want %d", got, want)
+			}
+
+		})
+
+	})
+
+	Convey("TestSingleNum1", t, func() {
+		Convey("用例1", func() {
+
+			got := SingleNum1([]int{2, 2, 3, 2})
+			want := 3
+
+			if got != want {
+				t.Errorf("got %d, want %d", got, want)
+			}
+
+		})
+
+		Convey("用例2", func() {
+
+			got := SingleNum1([]int{0, 1, 0, 1, 0, 1, 99})
+			want := 99
+
+			if got != want {
+				t.Errorf("got %d, want %d", got, want)
 			}
 
 		})
