@@ -20,11 +20,31 @@ func SingleNum1(nums []int) int {
 	var res int
 	for i:=31;i>=0;i--{
 		var tmp int
-		res = res<<1 //把结果的每一位拼起来
+		res = res<<1 //整理回原来的位置
 		for j:=0;j<len(nums);j++{
 			tmp+= (nums[j]>>uint(i))&1 //先求出数组中每个数在此bit中是0或1，然后求和
 		}
-		res |= tmp%3//求模数
+		res |= tmp%3//求模数,再把结果的每一位拼起来
 	}
 	return res
 }
+
+//思路，两个相同数用异或可以直接消掉。三个相同数时使第三个数出现后消掉为0，怎么实现呢？
+//  a b
+//0 0 0
+//1 x 0
+//2 0 x
+//3 0 0
+//使用两个变量a和b实现上图的状态转换，最后a变量就是只出现一次的那个数。使用到如下位操作
+// x^0=x, x&~x=0
+func SingleNum2(nums []int) int {
+
+	var a,b int
+	for i:=0;i<len(nums);i++{
+		a = (a^nums[i])& (^b)
+		b=(b^nums[i])&(^a)
+	}
+	return a
+	
+}
+
