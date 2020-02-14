@@ -13,8 +13,9 @@ func MeetingRoom(intervals [][]int) int {
 		starts = append(starts, v[0])
 		ends = append(ends, v[1])
 	}
-	starts = infra.BubbleSort(starts)
-	ends = infra.BubbleSort(ends)
+	//从小到大
+	starts = infra.BubbleSort(starts, false)
+	ends = infra.BubbleSort(ends, false)
 
 	var j int
 	n := len(starts)

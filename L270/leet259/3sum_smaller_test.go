@@ -27,4 +27,22 @@ func TestSumSmaller(t *testing.T) {
 
 	})
 
+	Convey("TestSumSmaller1", t, func() {
+
+		Convey("2", func() {
+
+			got := SumSmaller1([]int{-2, 0, 1, 3}, 2)
+			want := [][]int{
+				{-2, 0, 1},
+				{-2, 0, 3},
+			}
+
+			if !infra.IntarrCollectionComp(got, want, false) {
+				t.Errorf("failed")
+			}
+
+		})
+
+	})
+
 }

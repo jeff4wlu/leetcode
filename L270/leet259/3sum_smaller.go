@@ -1,5 +1,34 @@
 package leet259
 
+import "leetcode/infra"
+
+func SumSmaller1(nums []int, target int) [][]int {
+	n := len(nums)
+	if n < 3 {
+		return [][]int{}
+	}
+	res := [][]int{}
+
+	//从小到大
+	nums = infra.BubbleSort(nums, false)
+
+	for i := 0; i <= n-3; i++ {
+		small, big := i+1, n-1
+		for small < big {
+			if nums[i]+nums[small]+nums[big] < target {
+				for small < big {
+					res = append(res, []int{nums[i], nums[small], nums[big]})
+					big--
+				}
+				break
+			}
+			big--
+		}
+	}
+
+	return res
+}
+
 func SumSmaller(nums []int, target int) [][]int {
 	n := len(nums)
 	if n < 3 {
