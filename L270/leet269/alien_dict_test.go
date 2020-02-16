@@ -62,6 +62,24 @@ func TestAlienDict(t *testing.T) {
 
 		})
 
+		Convey("4", func() {
+
+			words := []string{
+				"ac",
+				"aa",
+				"b",
+				"c",
+			}
+
+			got := AlienDict(words)
+			want := ""
+
+			if got != want {
+				t.Errorf("got %s, want %s", got, want)
+			}
+
+		})
+
 	})
 
 }
