@@ -16,6 +16,8 @@ func HIndex(nums []int) int {
 	for i := 0; i < n; i++ {
 		if n-i >= cpy[i] {
 			max = infra.IntMax(max, cpy[i])
+		} else {
+			break
 		}
 	}
 
