@@ -36,10 +36,10 @@ func (q *Queue) Size() int {
 	return len(q.q)
 }
 
-func (q *Queue) Peek() int {
+func (q *Queue) Peek() interface{} {
 
 	if len(q.q) > 0 {
-		return q.q[0].(int)
+		return q.q[0]
 	}
-	return -1
+	return nil
 }

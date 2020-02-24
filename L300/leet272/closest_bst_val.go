@@ -25,7 +25,7 @@ func dfs(root *infra.BTIntNode, q *infra.Queue, target float32, k int) {
 	}
 	dfs(root.Left, q, target, k)
 	if q.Size() >= k {
-		tmp := q.Peek()
+		tmp := q.Peek().(int)
 		diff1 := float32(tmp) - target
 		if diff1 < 0 {
 			diff1 = -diff1
